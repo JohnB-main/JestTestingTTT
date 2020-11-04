@@ -57,7 +57,7 @@ class Game extends React.Component {
         </li>
       );
     });
-
+	window.alert(current.squares)
     let status;
     if (winner) {
       status = "Winner: " + winner;
@@ -68,10 +68,12 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
+		
           <Board
-            squares={current.squares}
-            onClick={i => this.handleClick(i)}
+			squares={current.squares}			
+            onClick={i => this.handleClick(i)}						
           />
+		  
         </div>
         <div className="game-info">
           <div>{status}</div>
@@ -93,7 +95,7 @@ function calculateWinner(squares) {
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
-  ];
+  ];  
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
