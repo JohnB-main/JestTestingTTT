@@ -1,6 +1,8 @@
 const game = require('./game.js');
-import calculateWinner from "./game.js"
 
-test('Testing X win first row', () => {
-  new calculateWinner((',,,,,,X,X,X')).toBe('X');
+const myMock = jest.fn();
+
+console.log(forTest)
+test('Testing X win Last row', () => {
+  calculateWinner((',,,,,,X,X,X')).toBe('X');
 });
